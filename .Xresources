@@ -1,0 +1,89 @@
+URxvt*font: xft:Source\ Code\ Pro\ Medium:size=10:antialias=true:hinting=true, xft:Inconsolata-g\ for\ Powerline:size=10:antialias=true:hinting=true
+
+Xft.dpi:	220
+Xft.autohint:	0
+Xft.lcdfilter:	lcddefault
+Xft.hintstyle:	hintfull
+Xft.hinting:	1
+Xft.antialias:	1
+Xft.rgba:	rgb
+
+! URxvt.font:	xft:Inconsolata\ for\ Powerline:pixelsize=36
+URxvt.letterSpace:	-1
+URxvt.perl-ext-common:	default,font-size
+URxvt.keysym.C-Up:	font-size:increase
+URxvt.keysym.C-Down:	font-size:decrease
+URxvt.keysym.C-S-Up:	font-size:incglobal
+URxvt.keysym.C-S-Down:	font-size:decglobal
+URxvt.keysym.C-equal:	font-size:reset
+URxvt.keysym.C-slash:	font-size:show
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! Gruvbox
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0: #282828
+*color8: #928374
+! DarkRed + Red
+*color1: #cc241d
+*color9: #fb4934
+! DarkGreen + Green
+*color2: #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3: #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4: #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5: #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6: #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7: #a89984
+*color15: #ebdbb2
+rofi.color-enabled: true
+rofi.color-window: #1d2021, #1d2021, #1d2021
+rofi.color-normal: #1d2021, #ebdbb2, #1d2021, #32302f, #ebdbb2
+rofi.color-active: #1d2021, #ebdbb2, #1d2021, #32302f, #ebdbb2
+rofi.color-urgent: #1d2021, #ebdbb2, #1d2021, #cc241d, #ebdbb2
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.perl-ext-common: default,clipboard
