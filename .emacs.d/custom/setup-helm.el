@@ -47,6 +47,7 @@
    ("C-c h o" . helm-occur)
    ("C-c h w" . helm-wikipedia-suggest)
    ("C-c h g" . helm-google-suggest)
+   ("C-c h x" . helm-register)
    :map helm-map
    ("TAB"     . helm-execute-persistent-action)
    ("C-i"     . helm-execute-persistent-action)
@@ -54,8 +55,7 @@
    :map helm-grep-mode-map
    ("RET"     . helm-grep-mode-jump-other-window)
    ("n"       . helm-grep-mode-jump-other-window-forward)
-   ("p"       . helm-grep-mode-jump-other-window-backward)
-   )
+   ("p"       . helm-grep-mode-jump-other-window-backward))
   :config
   (global-unset-key (kbd "C-x c"))
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)

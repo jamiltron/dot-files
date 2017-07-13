@@ -21,11 +21,35 @@
   (dtrt-indent-mode 1)
   (setq dtrt-indent-verbosity 0))
 
+;; http://www.flycheck.org/en/latest/
+(use-package flycheck
+  :init
+  (global-flycheck-mode))
+
 ;; https://github.com/victorhge/iedit
 ;; edit multiple regions in the same way simultaneously
 (use-package iedit
   :init (setq iedit-toggle-key-default nil)
   :bind (("C-;" . iedit-mode)))
+
+;; https://www.emacswiki.org/emacs/MarkdownMode
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\."       . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
+;; https://github.com/Fuco1/smartparens
+(use-package smartparens
+  :diminish smartparens-mode
+  :config
+  (progn
+    (require 'smartparens-config)
+    (show-smartparens-global-mode t)))
+
+(add-hook 'prog-mode-hook 'turn-on-smartparens-strict-mode)
+(add-hook 'markdown-mode-hook 'turn-on-smartparents-strict-mode)
 
 ;; https://www.emacswiki.org/emacs/UndoTree
 (use-package undo-tree

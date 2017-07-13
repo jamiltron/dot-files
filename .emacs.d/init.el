@@ -22,7 +22,9 @@
 (require 'setup-general)
 (require 'setup-editing)
 (require 'setup-helm)
-
+(require 'setup-company)
+(require 'setup-c)
+(require 'setup-rust)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
