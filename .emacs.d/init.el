@@ -24,7 +24,10 @@
 (require 'setup-helm)
 (require 'setup-company)
 (require 'setup-c)
+(require 'setup-cedet)
 (require 'setup-rust)
+(require 'setup-rtags)
+(require 'setup-helm-gtags)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
