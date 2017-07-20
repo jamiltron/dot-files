@@ -60,6 +60,33 @@
   (global-unset-key (kbd "C-x c"))
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
   (use-package helm-grep)
+  (use-package helm-swoop
+    :bind (("C-c h o" . helm-swoop)
+           ("C-c s"   . helm-multi-swoop-all))
+    :config
+    (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
+    (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
+
+    (setq helm-multi-swoop-edit-save t)
+    (setq helm-swoop-split-with-multiple-windows t)
+    (setq helm-swoop-split-direction 'split-window-vertically)
+    (setq helm-swoop-speed-or-color t))
+  (use-package helm-projectile
+    :init
+    (projectile-global-mode)
+    (helm-projectile-on)
+    (setq projectile-completion-system 'helm)
+    (setq projectile-switch-project-action 'helm-projectile)
+    (setq projectile-enable-caching t)
+    :config
+    (progn
+      (custom-set-variables '(speedbar-show-unknown-files t))
+      (use-package projectile-speedbar
+        :init
+        (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
+        (use-package speedbar)
+        (use-package sr-speedbar)
+        (use-package projectile))))
   (use-package helm-smex
     :bind
     (("M-x"     . helm-smex)
