@@ -30,6 +30,9 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
+(global-linum-mode t)
+(setq column-number-mode t)
+(global-hl-line-mode 1)
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
