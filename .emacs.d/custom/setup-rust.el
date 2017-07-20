@@ -5,8 +5,10 @@
       :init
       (progn
         (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
-    (progn
-      (use-package racer
+    (use-package cargo
+      :init
+      (add-hook 'rust-mode-hook 'cargo-minor-mode))
+    (use-package racer
         :init
         (progn
           (add-hook 'rust-mode-hook #'racer-mode)
@@ -16,7 +18,7 @@
         (:map rust-mode-map
               ("TAB" . company-indent-or-complete-common))
         :config
-        (setq company-tooltip-align-annotations t)))
+        (setq company-tooltip-align-annotations t))
     (setq rust-format-on-save t)))
 
 (provide 'setup-rust)
